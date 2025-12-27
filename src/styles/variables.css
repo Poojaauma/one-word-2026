@@ -1,0 +1,40 @@
+:root {
+  /* Colors */
+  --bg-primary: #FFF0F5;
+  --bg-gradient: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+  /* Baseline */
+  --bg-gradient: linear-gradient(135deg, #FFF6F8 0%, #F3E5F5 40%, #E0F7FA 100%);
+  /* Dreamy Pink/Purple/Blue */
+
+  --accent-blush: #F8BBD0;
+  --accent-sage: #D3E0DC;
+
+  --text-primary: #2A2A2A;
+  --text-secondary: #6B6B6B;
+  --text-placeholder: #BDBDBD;
+
+  /* Typography */
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Inter", sans-serif;
+
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 4rem;
+
+  /* Effects */
+  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.03);
+  --glass-bg: rgba(255, 255, 255, 0.4);
+  --glass-border: rgba(255, 255, 255, 0.6);
+  --glow: 0 0 20px rgba(255, 255, 255, 0.8);
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

@@ -1,0 +1,67 @@
+.card-wrapper {
+    width: 100%;
+    max-width: 600px;
+    /* Viewport width limit */
+    aspect-ratio: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    /* fit in screen logic */
+    max-height: 50vh;
+    /* Restrict height aggressively */
+    padding: 0;
+    /* Remove padding to save space */
+    margin: 0 auto;
+}
+
+.card-content {
+    text-align: center;
+    z-index: 10;
+}
+
+.word-display {
+    font-family: var(--font-serif);
+    font-size: clamp(3rem, 10vw, 6rem);
+    font-weight: 500;
+    color: var(--text-primary);
+    margin: 0 0 var(--spacing-sm) 0;
+    line-height: 1.2;
+    transition: all 0.3s ease;
+    min-height: 1.2em;
+    /* Prevent jump */
+}
+
+.word-display.active {
+    animation: softPulse 3s infinite ease-in-out;
+    text-shadow: var(--glow);
+}
+
+.word-display.empty {
+    opacity: 0.3;
+    font-style: italic;
+}
+
+.subtitle {
+    font-family: var(--font-sans);
+    font-weight: 300;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+    color: var(--text-secondary);
+    margin: 0;
+    opacity: 0.8;
+}
+
+.card-footer {
+    position: absolute;
+    bottom: var(--spacing-md);
+    opacity: 0.5;
+}
+
+.brand {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+}
