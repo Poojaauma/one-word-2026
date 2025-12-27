@@ -1,0 +1,121 @@
+.affirmation-preview {
+    width: 100%;
+    max-width: 400px;
+    margin-top: var(--spacing-xs);
+}
+
+.affirmation-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    background: rgba(255, 255, 255, 0.3);
+    border: 1px solid var(--glass-border);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+.affirmation-toggle:hover {
+    background: rgba(255, 255, 255, 0.5);
+    color: var(--text-primary);
+}
+
+.toggle-icon {
+    font-size: 1.2rem;
+    font-weight: 300;
+    line-height: 1;
+}
+
+.toggle-text {
+    font-weight: 400;
+}
+
+.affirmation-preview.expanded .affirmation-toggle {
+    border-radius: 12px 12px 0 0;
+    border-bottom: none;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.affirmation-content {
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid var(--glass-border);
+    border-top: none;
+    border-radius: 0 0 10px 10px;
+    padding: var(--spacing-sm);
+    text-align: center;
+    position: relative;
+}
+
+.affirmation-content.fade-in {
+    animation: fadeInDown 0.4s ease-out;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.affirmation-loading {
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    font-style: italic;
+    margin: 0;
+}
+
+.affirmation-text {
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--text-primary);
+    line-height: 1.5;
+    margin: 0 0 0.25rem 0;
+}
+
+.affirmation-emoji {
+    font-style: normal;
+}
+
+.affirmation-context {
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin: 0.5rem 0 0 0;
+}
+
+.affirmation-refresh {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255, 255, 255, 0.6);
+    color: var(--text-secondary);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.affirmation-refresh:hover {
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--text-primary);
+    transform: rotate(180deg);
+}

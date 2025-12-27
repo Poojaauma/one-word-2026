@@ -10,7 +10,7 @@ export const Card = forwardRef(({ word }, ref) => {
                 </h1>
                 <p className="subtitle">Let this guide your 2026.</p>
             </div>
-            <div className="card-footer">
+            <div className="card-footer-layout">
                 <span className="brand">One Word · 2026</span>
             </div>
         </div>

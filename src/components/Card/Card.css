@@ -1,36 +1,35 @@
 .card-wrapper {
     width: 100%;
     max-width: 600px;
-    /* Viewport width limit */
-    aspect-ratio: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     position: relative;
-    /* fit in screen logic */
-    max-height: 50vh;
-    /* Restrict height aggressively */
-    padding: 0;
-    /* Remove padding to save space */
+    padding: var(--spacing-sm) 0;
     margin: 0 auto;
+    /* Force column layout */
+    height: auto;
 }
 
 .card-content {
     text-align: center;
     z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-xs);
 }
 
 .word-display {
     font-family: var(--font-serif);
-    font-size: clamp(3rem, 10vw, 6rem);
+    font-size: clamp(2.5rem, 8vw, 5rem);
     font-weight: 500;
     color: var(--text-primary);
-    margin: 0 0 var(--spacing-sm) 0;
-    line-height: 1.2;
+    margin: 0;
+    line-height: 1.1;
     transition: all 0.3s ease;
-    min-height: 1.2em;
-    /* Prevent jump */
+    min-height: 1.1em;
 }
 
 .word-display.active {
@@ -53,10 +52,12 @@
     opacity: 0.8;
 }
 
-.card-footer {
-    position: absolute;
-    bottom: var(--spacing-md);
+.card-footer-layout {
+    display: block;
+    position: static !important;
+    margin-top: 1rem !important;
     opacity: 0.5;
+    order: 3;
 }
 
 .brand {
@@ -64,4 +65,5 @@
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.15em;
+    display: block;
 }

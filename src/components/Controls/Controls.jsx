@@ -1,29 +1,7 @@
 import React from 'react';
 import './Controls.css';
 
-export const Controls = ({ word, onWordChange, cardRef }) => {
-    const presets = ['Calm', 'Focus', 'Courage', 'Flow', 'Joy', 'Bold'];
-    const inspirationWords = [
-        'Create', 'Balance', 'Growth', 'Peace', 'Energy', 'Trust',
-        'Align', 'Reset', 'Shine', 'Build', 'Dream', 'Grit'
-    ];
-
-    const handleChange = (e) => {
-        let val = e.target.value;
-        if (val.length <= 12) {
-            val = val.charAt(0).toUpperCase() + val.slice(1);
-            onWordChange(val);
-        }
-    };
-
-    const handlePreset = (preset) => onWordChange(preset);
-
-    const handleRandom = () => {
-        const combined = [...presets, ...inspirationWords];
-        const random = combined[Math.floor(Math.random() * combined.length)];
-        onWordChange(random);
-    };
-
+export const Controls = ({ word, cardRef }) => {
     const handleExport = async (type) => {
         // Dimensions for each export type
         const configs = {
@@ -73,36 +51,6 @@ export const Controls = ({ word, onWordChange, cardRef }) => {
 
     return (
         <div className="controls-container">
-            <div className="input-group">
-                <input
-                    type="text"
-                    className="word-input"
-                    placeholder="One Word"
-                    value={word}
-                    onChange={handleChange}
-                    maxLength={12}
-                />
-                <button
-                    className="btn-random"
-                    onClick={handleRandom}
-                    title="Random Word"
-                >
-                    🎲
-                </button>
-            </div>
-
-            <div className="presets">
-                {presets.map(p => (
-                    <button
-                        key={p}
-                        className="chip"
-                        onClick={() => handlePreset(p)}
-                    >
-                        {p}
-                    </button>
-                ))}
-            </div>
-
             <div className="actions">
                 <button className="btn-download" onClick={() => handleExport('mobile')}>
                     📱 Mobile Wallpaper
@@ -114,3 +62,4 @@ export const Controls = ({ word, onWordChange, cardRef }) => {
         </div>
     );
 };
+
