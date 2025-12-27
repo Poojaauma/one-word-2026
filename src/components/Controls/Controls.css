@@ -78,9 +78,9 @@
 
 .actions {
     min-height: 50px;
-    /* Reserve space for button */
     display: flex;
     justify-content: center;
+    gap: 12px;
 }
 
 .btn-download {
@@ -88,13 +88,20 @@
     color: var(--bg-primary);
     border: none;
     border-radius: 50px;
-    padding: 12px 24px;
+    padding: 12px 20px;
     font-family: var(--font-sans);
     font-weight: 500;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     cursor: pointer;
     transition: transform 0.2s, opacity 0.2s;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    white-space: nowrap;
+}
+
+.btn-download.variant {
+    background: rgba(255, 255, 255, 0.5);
+    color: var(--text-primary);
+    border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .btn-download:hover {
