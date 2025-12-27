@@ -43,12 +43,31 @@ export const Controls = ({ word, onWordChange, cardRef }) => {
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    // Clean up for export rendering
                     borderRadius: 0,
                     transform: 'none',
                     boxShadow: 'none',
+                    padding: 0,
                 },
-                pixelRatio: 1,
+                // Scale text for high-res output
+                onClone: (clonedNode) => {
+                    const wordEl = clonedNode.querySelector('.word-display');
+                    const subtitleEl = clonedNode.querySelector('.subtitle');
+                    const brandEl = clonedNode.querySelector('.brand');
+                    const footerEl = clonedNode.querySelector('.card-footer');
+
+                    if (type === 'post') {
+                        if (wordEl) wordEl.style.fontSize = '12rem';
+                        if (subtitleEl) subtitleEl.style.fontSize = '2.5rem';
+                        if (brandEl) brandEl.style.fontSize = '1.5rem';
+                        if (footerEl) footerEl.style.bottom = '4rem';
+                    } else {
+                        if (wordEl) wordEl.style.fontSize = '7rem';
+                        if (subtitleEl) subtitleEl.style.fontSize = '1.8rem';
+                        if (brandEl) brandEl.style.fontSize = '1.2rem';
+                        if (footerEl) footerEl.style.bottom = '2rem';
+                    }
+                },
+                pixelRatio: 3, // Render at 3x density for HD crispness
             });
 
             const link = document.createElement('a');
