@@ -62,7 +62,7 @@ export const AffirmationPreview = ({ word, isVisible }) => {
                 onClick={() => setShowFull(!showFull)}
             >
                 <span className="toggle-icon">{showFull ? '−' : '+'}</span>
-                <span className="toggle-text">Today's Affirmation</span>
+                <span className="toggle-text">Click here for Today's Affirmation</span>
             </button>
 
             {showFull && (
@@ -88,6 +88,24 @@ export const AffirmationPreview = ({ word, isVisible }) => {
                         </>
                     ) : (
                         <p className="affirmation-text">Take a moment to breathe.</p>
+                    )}
+                    {affirmation && (
+                        <div className="affirmation-actions">
+                            <button className="affirmation-share" onClick={() => {
+                                const text = `✨ Affirmation of the day\n\n"${affirmation.affirmation}"\n\nFor more such positives for the day, check https://one-word-2026.vercel.app/`;
+                                if (navigator.share) {
+                                    navigator.share({
+                                        title: 'Daily Affirmation',
+                                        text: text
+                                    }).catch(console.error);
+                                } else {
+                                    navigator.clipboard.writeText(text);
+                                    alert('Copied to clipboard!');
+                                }
+                            }}>
+                                📤 Share this thought
+                            </button>
+                        </div>
                     )}
                 </div>
             )}

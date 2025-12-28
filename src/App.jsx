@@ -9,10 +9,9 @@ import {
   getWord,
   setWord as saveWord,
   isFirstTime,
-  completeOnboarding,
-  setNotificationsEnabled
+  completeOnboarding
 } from './services/storageService';
-import { initializeNotifications } from './services/notificationService';
+
 
 // Register service worker
 if ('serviceWorker' in navigator) {
@@ -45,8 +44,7 @@ function App() {
       setShowOnboarding(true);
     }
 
-    // Initialize notifications
-    initializeNotifications();
+
 
     // Mark app as ready with slight delay for fade-in effect
     setTimeout(() => setIsReady(true), 100);
@@ -59,17 +57,11 @@ function App() {
   };
 
   // Handle onboarding completion
-  const handleOnboardingComplete = (chosenWord, notificationsEnabled) => {
+  const handleOnboardingComplete = (chosenWord) => {
     setWord(chosenWord);
     saveWord(chosenWord);
-    setNotificationsEnabled(notificationsEnabled);
     completeOnboarding();
     setShowOnboarding(false);
-
-    // Initialize notifications if enabled
-    if (notificationsEnabled) {
-      initializeNotifications();
-    }
   };
 
   return (

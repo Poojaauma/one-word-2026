@@ -43,15 +43,19 @@ body {
   z-index: 10;
   width: 100%;
   max-width: 800px;
-  height: 100vh;
-  max-height: 100vh;
-  padding: var(--spacing-xs);
+  /* Allow minimal scrolling if needed, but keeping centered look */
+  min-height: 100vh;
+  height: auto;
+  /* Removed max-height: 100vh; */
+  padding: 40px var(--spacing-xs);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: var(--spacing-xs);
-  overflow: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
+  /* Removed padding-bottom hack */
 }
 
 /* Settings gear button */

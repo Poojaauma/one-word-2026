@@ -2,6 +2,8 @@ import React from 'react';
 import './Controls.css';
 
 export const Controls = ({ word, cardRef }) => {
+
+
     const handleExport = async (type) => {
         // Dimensions for each export type
         const configs = {
@@ -58,6 +60,7 @@ export const Controls = ({ word, cardRef }) => {
                 <button className="btn-download variant" onClick={() => handleExport('linkedin')}>
                     💼 LinkedIn Cover
                 </button>
+
             </div>
         </div>
     );
